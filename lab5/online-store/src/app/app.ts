@@ -16,13 +16,27 @@ export class App {
 
   categories: Category[] = [];
   selectedProducts: Product[] = [];
+  selectedCategory!: Category;
 
   constructor(private productService: ProductService) {
     this.categories = this.productService.getCategories();
   }
 
   selectCategory(category: Category) {
-    this.selectedProducts =
-      this.productService.getProductsByCategory(category.id);
+    this.selectedCategory = category;   
+
+    this.selectedProducts = this.productService.getProductsByCategory(category.id);
   }
+
+  deleteProduct(product: Product) {  
+    this.productService.deleteProduct(product.id);
+
+    if (this.selectedCategory) {
+      this.selectedProducts =
+        this.productService.getProductsByCategory(
+          this.selectedCategory.id
+        );
+    }
+  }
+
 }

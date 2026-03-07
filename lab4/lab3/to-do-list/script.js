@@ -2,6 +2,10 @@ const input = document.getElementById("input_text");
 const addButton = document.getElementById("add_button");
 const list = document.getElementById("list");
 
+const hideButton = document.getElementById("hide");
+const showButton = document.getElementById("show");
+const listContainer = document.getElementById("list-container");
+
 addButton.addEventListener("click", function(event){
     event.preventDefault();
 
@@ -49,3 +53,15 @@ addButton.addEventListener("click", function(event){
 
     input.value = "";
 })
+
+hideButton.addEventListener("click", function(){
+    listContainer.style.display="none";
+})
+
+showButton.addEventListener("click", function(){
+    if(list.children.length > 0){
+        listContainer.style.display="block";
+    }
+})
+
+

@@ -64,7 +64,6 @@ export class AlbumDetailComponent implements OnInit {
       next: () => {
         this.saving = false;
         this.saved = true;
-        setTimeout(() => (this.saved = false), 2500);
       },
       error: (err) => {
         console.error('Save error:', err);
@@ -73,10 +72,10 @@ export class AlbumDetailComponent implements OnInit {
       },
     });
   }
-
-viewPhotos(): void {
-  this.router.navigate(['/albums', this.album?.id, 'photos']);
-}
+  
+  viewPhotos(): void {
+    this.router.navigate(['/albums', this.album?.id, 'photos']);
+  }
 
   goBack(): void {
     this.router.navigate(['/albums']);

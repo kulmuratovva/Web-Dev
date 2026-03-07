@@ -37,6 +37,17 @@
     ⭐ {{product.rating}}
   </p>
 
+  <div class="actions">
+    <button (click)="toggleFavorite()" class="like-btn">
+      <span *ngIf="!product.isFavorite">🤍</span>
+      <span *ngIf="product.isFavorite">❤️</span>
+    </button>
+
+    <button (click)="onDelete()" class="delete-btn">
+      Delete
+    </button>
+  </div>
+
   <div class="buttons">
     <a [href]="product.link" target="_blank" class="view-btn">
       View on Kaspi
@@ -50,5 +61,12 @@
       Telegram
     </button>
   </div>
+
+  <button 
+  class="favorite-btn"
+  (click)="toggleFavorite()"
+  [class.active]="product.isFavorite">
+  ♥
+</button>
 
 </div>

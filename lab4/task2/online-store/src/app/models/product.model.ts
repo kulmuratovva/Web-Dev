@@ -7,4 +7,8 @@ export interface Product {
   image: string;
   images: string[];
   link: string;
+
+  isFavorite: boolean;
+  categoryId: number;
+
 }

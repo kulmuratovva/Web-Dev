@@ -43,7 +43,10 @@
       <span *ngIf="product.isFavorite">❤️</span>
     </button>
 
-    <button (click)="onDelete()" class="delete-btn">
+    <button
+      (click)="onDelete()"
+      class="delete-btn"
+      [disabled]="product.isFavorite">
       Delete
     </button>
   </div>
@@ -61,12 +64,5 @@
       Telegram
     </button>
   </div>
-
-  <button 
-  class="favorite-btn"
-  (click)="toggleFavorite()"
-  [class.active]="product.isFavorite">
-  ♥
-</button>
 
 </div>

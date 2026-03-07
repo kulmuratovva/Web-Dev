@@ -34,3 +34,26 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.sort-buttons {
+  
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.sort-buttons button {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.sort-buttons button:hover {
+  background: #111;
+  color: white;
+  border-color: #111;
+}

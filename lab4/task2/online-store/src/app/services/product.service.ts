@@ -388,18 +388,13 @@ export class ProductService {
     ];
 
     toggleFavorite(productId: number) {
-        const product = this.products.find(p => p.id === productId);
-        if (product) {
-            product.isFavorite = !product.isFavorite;
-        }
-    }
+  const product = this.products.find(p => p.id === productId);
+  if (product) {
+    product.isFavorite = !product.isFavorite;
+  }
+}
 
-    getFavorites(): Product[] {
-        return this.products.filter(p => p.isFavorite);
-    }
-
-    deleteProduct(productId: number) {
-        this.products =
-        this.products.filter(p => p.id !== productId);
-    }
+getFavorites(): Product[] {
+  return this.products.filter(p => p.isFavorite);
+}
 }

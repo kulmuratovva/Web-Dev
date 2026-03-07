@@ -166,3 +166,11 @@ h3 {
   background: #ff4d4d;
   color: white;
 }
+
+.delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f0e9e9;
+  border-color: #9f9e9e;
+  color: #999999;
+}
